@@ -164,7 +164,7 @@ export const LOCALES = [
   {
     name: "Hrvatski (Croatian)",
     value: "hr-HR",
-    progress: 39,
+    progress: 100, // Completed fork catalog; not upstream Crowdin approval.
     dir: "ltr",
     pluralFoodHandling: "always",
   },

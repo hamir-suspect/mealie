@@ -1,0 +1,19 @@
+# Keep the backend and dependencies on the deployed v3.28.0 release.
+# Rebuild the matching frontend and replace only Croatian package resources.
+FROM node:24@sha256:64af3819f9275802414d7cdc38c27e9d82bd564dec4d4da87d008255d36c63b4 AS frontend-builder
+RUN npm install --global pnpm@11.23.0
+WORKDIR /frontend
+COPY frontend/ ./
+RUN pnpm install --frozen-lockfile
+RUN pnpm generate
+
+FROM ghcr.io/mealie-recipes/mealie:v3.28.0@sha256:8b02290f4d1806f02acac6f25f6d48a3c965612fda1f8e914d5af533276f8688
+ARG SOURCE_REVISION
+LABEL org.opencontainers.image.source="https://github.com/hamir-suspect/mealie" \
+      org.opencontainers.image.revision="${SOURCE_REVISION}" \
+      org.opencontainers.image.version="3.28.0-hr.1"
+RUN rm -rf /opt/mealie/lib/python3.14/site-packages/mealie/frontend
+COPY --from=frontend-builder /frontend/dist/ /opt/mealie/lib/python3.14/site-packages/mealie/frontend/
+COPY mealie/lang/messages/hr-HR.json /opt/mealie/lib/python3.14/site-packages/mealie/lang/messages/hr-HR.json
+COPY mealie/repos/seed/resources/foods/locales/hr-HR.json /opt/mealie/lib/python3.14/site-packages/mealie/repos/seed/resources/foods/locales/hr-HR.json
+COPY mealie/repos/seed/resources/units/locales/hr-HR.json /opt/mealie/lib/python3.14/site-packages/mealie/repos/seed/resources/units/locales/hr-HR.json

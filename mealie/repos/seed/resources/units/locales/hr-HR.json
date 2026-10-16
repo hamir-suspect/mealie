@@ -3,19 +3,19 @@
         "name": "žličica",
         "plural_name": "žličice",
         "description": "",
-        "abbreviation": "žlič"
+        "abbreviation": "žlič."
     },
     "tablespoon": {
         "name": "žlica",
         "plural_name": "žlice",
         "description": "",
-        "abbreviation": "žlic"
+        "abbreviation": "žl."
     },
     "cup": {
         "name": "šalica",
         "plural_name": "šalice",
         "description": "",
-        "abbreviation": "c"
+        "abbreviation": "šal."
     },
     "fluid-ounce": {
         "name": "tekuća unca",
@@ -24,7 +24,7 @@
         "abbreviation": "fl oz"
     },
     "pint": {
-        "name": "pt",
+        "name": "pinta",
         "plural_name": "pinte",
         "description": "",
         "abbreviation": "pt"
@@ -85,8 +85,8 @@
         "abbreviation": "mg"
     },
     "splash": {
-        "name": "prskanje",
-        "plural_name": "prskanja",
+        "name": "malo tekućine",
+        "plural_name": "malo tekućine",
         "description": "",
         "abbreviation": ""
     },
@@ -103,19 +103,19 @@
         "abbreviation": ""
     },
     "head": {
-        "name": "glava",
+        "name": "glavica",
         "plural_name": "glavice",
         "description": "",
         "abbreviation": ""
     },
     "clove": {
-        "name": "klinčić",
+        "name": "češanj",
         "plural_name": "češnjevi",
         "description": "",
         "abbreviation": ""
     },
     "can": {
-        "name": "limenka",
+        "name": "konzerva",
         "plural_name": "konzerve",
         "description": "",
         "abbreviation": ""
